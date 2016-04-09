@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: $color-main;
+    background-color: $color-background;
+}
+
+img {
+    max-width: 100%;
+}

@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,600,700);
+
+$font-main: Raleway, Helvetica, Arial, sans-serif;
+$font-weight-normal: 300;
+$font-weight-bold: 600;
+$font-weight-heavy: 700;
+
+$darkgrey: #202020;
+
+$color-main:        white;
+$color-background:  $darkgrey;
+
+$small: screen and (min-width: 600px);
+$medium: screen and (min-width: 900px);
+$large: screen and (min-width: 1200px);
+
+$container-default-width: 80%;
+$container-max-width: 1200px;
