@@ -26,6 +26,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lipho V.",
-  "repository": "https://gitlab.com/plus20charisma/portfolio-site.git"
+  "repository": "https://gitlab.com/plus20charisma/portfolio-site.git",
   "license": "MIT"
 }
