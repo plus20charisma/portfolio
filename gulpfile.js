@@ -40,7 +40,7 @@ gulp.task('css', function(){
 
 gulp.task('js', function(){
   gulp.src(source + 'js/*.js')
-    .pipe(concat('script.js'))
+    .pipe(concat('app.js'))
     .pipe(browserify())
     .pipe(uglify())
     .pipe(gulp.dest(dest +'js'));
