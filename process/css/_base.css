@@ -8,3 +8,5 @@ body {
 img {
     max-width: 100%;
 }
+
+[ng\:cloak], [ng-cloak], .ng-cloak { display: none; }

@@ -135,3 +135,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+builds/dev/js/vendor/
+builds/dev/fonts/
