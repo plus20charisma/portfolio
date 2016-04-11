@@ -1,5 +1,5 @@
 var gulp, gutil, webserver, minhtml, postcss, autoprefixer, precss, cssnano, animation, concat,
-    browserify, uglify;
+    browserify, uglify, annotate, sourcemaps;
 
 gulp = require('gulp'),
 gutil = require('gulp-util'),
@@ -13,12 +13,17 @@ animation = require('postcss-animation');
 concat = require('gulp-concat');
 browserify = require('gulp-browserify');
 uglify = require('gulp-uglify');
+annotate = require('gulp-ng-annotate');
+sourcemaps = require('gulp-sourcemaps');
 
-var source, dest;
+var source, dest, jsSources;
 
 source = 'process/';
 dest = 'builds/dev/';
 
+jsSources = [
+  'process/js/app.js'
+]
 
 gulp.task('html', function(){
   gulp.src(source + '*.html')
@@ -39,15 +44,16 @@ gulp.task('css', function(){
 });
 
 gulp.task('js', function(){
-  gulp.src(source + 'js/*.js')
+  gulp.src(jsSources)
     .pipe(concat('app.js'))
     .pipe(browserify())
+    .pipe(annotate())
     .pipe(uglify())
     .pipe(gulp.dest(dest +'js'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch(source + '**/*.js', ['js']); //TODO add js process
+  gulp.watch(source + '**/*.js', ['js']);
   gulp.watch(source + '**/*.css', ['css']);
   gulp.watch(source + '**/*.html', ['html']);
 });
