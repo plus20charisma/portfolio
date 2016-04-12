@@ -9,15 +9,16 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     </head>
 <body ng-app="portfolio">
-<!--<div id="particles-js"></div>  uncomment to add particles-->
-<section class="header">
+<div id="particles-js"></div>
+<header class="header">
     <h1>Lipho's Portfolio</h1>
     <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque doloremque error esse iusto maiores molestias, nam numquam quas quibusdam repellat vero voluptatibus. Nam nemo nisi nulla odio quam sunt vel.</h3>
-</section>
+</header>
 <section ng-controller="galleryCtrl">
-    <ul>
-        <li>
-            <span>{{2+5*3}}</span>
+    <ul class="gallery" ng-cloak>
+        <li class="port-item" ng-repeat="item in portfolio">
+            <h4 class="port-name">{{item.name}}</h4>
+            <img class="port-image" src="http://placehold.it/300x150" alt="">
         </li>
     </ul>
 </section>

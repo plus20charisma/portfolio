@@ -1,5 +1,14 @@
 .gallery {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery li {
+    list-style-type: none;
+}
+
+.port-item {
+
 }
