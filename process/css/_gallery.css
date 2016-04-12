@@ -1,14 +1,48 @@
-.gallery {
+$item-width: 100%;
+
+.port {
+    text-align: center;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: space-around;
-}
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-.gallery li {
-    list-style-type: none;
-}
+    .port-item {
+        overflow: hidden;
+        position: relative;
+        /*media calculations*/
+        @media $small { width: calc($item-width/1) }
+        @media $medium { width: calc($item-width/2) }
+        @media $large { width: calc($item-width/3) }
+        transition: all .4s ease-in-out;
+        opacity: .9;
 
-.port-item {
+        &:hover, &:focus {
+              opacity: 1;
+              transform: scale(1.2);
+              z-index: 2;
 
+            .port-name {
+                display: block;
+                animation: slideInUp 1s;
+            }
+        }
+
+        .port-name {
+            color: black;
+            background-color: rbga(255,255,255,.9);
+            font-weight: $font-weight-heavy;
+            font-size: 80%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: none;
+        }
+
+         .port-image {width: 100%}
+
+    }
 }

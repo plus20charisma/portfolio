@@ -4,6 +4,7 @@
   "description": "A portfolio of the work of Lipho V.",
   "main": "gulpfile.js",
   "devDependencies": {
+    "angular-bootstrap-lightbox": "^0.12.0",
     "autoprefixer": "^6.1.1",
     "cssnano": "^3.3.2",
     "gulp": "^3.9.0",
