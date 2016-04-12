@@ -1,5 +1,5 @@
 var gulp, gutil, webserver, minhtml, postcss, autoprefixer, precss, cssnano, animation, concat,
-    browserify, uglify, annotate, sourcemaps;
+    browserify, uglify, annotate, sourcemaps, useref, gulpIf;
 
 gulp = require('gulp'),
 gutil = require('gulp-util'),
@@ -15,6 +15,8 @@ browserify = require('gulp-browserify');
 uglify = require('gulp-uglify');
 annotate = require('gulp-ng-annotate');
 sourcemaps = require('gulp-sourcemaps');
+useref = require('gulp-useref');
+gulpIf = require('gulp-if');
 
 var source, dest, jsSources;
 
@@ -25,10 +27,19 @@ jsSources = [
   'process/js/app.js'
 ]
 
-gulp.task('html', function(){
+gulp.task('html', ['useref'], function(){
   gulp.src(source + '*.html')
+    .pipe(useref())
     .pipe(minhtml())
     .pipe(gulp.dest(dest));
+});
+
+gulp.task('useref', function(){
+    return gulp.src(source+'*.html')
+        .pipe(useref())
+        // Minifies only if it's a JavaScript file
+        .pipe(gulpIf('*.js', uglify()))
+        .pipe(gulp.dest(dest))
 });
 
 gulp.task('css', function(){
@@ -51,6 +62,7 @@ gulp.task('js', function(){
     .pipe(uglify())
     .pipe(gulp.dest(dest +'js'));
 });
+
 
 gulp.task('watch', function() {
   gulp.watch(source + '**/*.js', ['js']);
