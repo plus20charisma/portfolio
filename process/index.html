@@ -6,21 +6,52 @@
     <meta name="description" content="Lipho V is a web and graphic designer based in Los Angeles.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <script src="js/other/angular.min.js"></script>
     <script src="js/other/particles.min.js"></script>
     </head>
 <body ng-app="portfolio">
-<div id="particles-js"></div>
+<!-- <div id="particles-js"></div> -->
 <header class="header">
     <h1>Lipho's Portfolio</h1>
     <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque doloremque error esse iusto maiores molestias, nam numquam quas quibusdam repellat vero voluptatibus. Nam nemo nisi nulla odio quam sunt vel.</h2>
 </header>
-<section class="port-container" ng-controller="galleryCtrl">
-    <ul class="port" ng-cloak>
+<section id="port-container" ng-controller="galleryCtrl">
+    <ul class="port">
         <li class="port-item" ng-repeat="item in portfolio">
-            <a href="#"></a><img class="port-image" src="http://placehold.it/300x150" alt=""></a>
+            <a href="#"></a><img class="port-image" src="http://placehold.it/640x360" alt=""></a>
             <h3 class="port-name">{{item.name}}</h3>
         </li>
+    </ul>
+</section>
+
+<section id="contact-footer">
+    <form method="post" action="#" _lpchecked="1">
+        <div class="field">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="field">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="4"></textarea>
+        </div>
+        <ul class="actions">
+            <li><input type="submit" value="Send Message"></li>
+        </ul>
+    </form>
+    <ul class="icons">
+        <li><a href="#" class="fa icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a href="#" class="fa icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+        <li><a href="#" class="fa icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="#" class="fa icon alt fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="#" class="fa icon alt fa-envelope"><span class="label">Email</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>© 2016 +20</li>
     </ul>
 </section>
 <script src="js/app.js"></script>
