@@ -1,0 +1,68 @@
+#contact-footer {
+
+
+    #contact-form{
+        @media $medium { width: calc($item-width/2)}
+    }
+
+    #social-icons {
+        @media $medium { width: calc($item-width/2)}
+    }
+
+    text-align: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-top: 2rem;
+
+    ul, ol {list-style: none;
+        padding: 0;
+    }
+
+    form input[type="text"], form input[type="email"], form input[type="password"], form select, form textarea {width: $item-width;}
+
+/* icons */
+    .icons {
+
+        text-align: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        @media $small {justify-content: center;}
+
+        margin: 0 0 3rem 0;
+
+        a {
+            display: inline-block;
+            width: 2.5em;
+            height: 2.5em;
+            line-height: 2.5em;
+            text-align: center;
+            border: 0;
+        }
+
+    }
+
+    .icon {
+        text-decoration: none;
+    }
+
+    .icon > .label {
+        display:none;
+    }
+
+    .icon:before {
+        font-family: FontAwesome;
+        font-size: 2.2rem;
+        text-decoration: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        font-smoothing: antialiased;
+    }
+
+    a {
+        color: $color-main;
+    }
+
+}

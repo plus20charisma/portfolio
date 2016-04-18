@@ -97,6 +97,8 @@ app.controller('galleryCtrl', ['$scope', function($scope) {
 
 }]);
 
+/*
+
 particlesJS("particles-js", {
   "particles": {
     "number": {
@@ -206,3 +208,5 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
+
+    */
