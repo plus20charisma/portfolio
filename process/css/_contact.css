@@ -19,7 +19,28 @@
         padding: 0;
     }
 
-    form input[type="text"], form input[type="email"], form input[type="password"], form select, form textarea {width: $item-width;}
+    form input[type="text"], form input[type="email"], form input[type="password"], form select, form textarea {
+
+        width: $item-width;
+        font-fmaily: $font-main;
+        color: #fff;
+        position: relative;
+        -webkit-appearance: none;
+        display: inline-block;
+        outline: 0;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 0.35em;
+        padding: 0.75rem 1rem 0.75rem 1rem;
+        box-shadow: inset 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.05);
+        border: solid 1px rgba(0, 0, 0, 0.15);
+
+        transition: all 0.35s ease-in-out;
+
+    }
+
+    form input[type="text"], form input[type="email"], form input[type="password"] {
+        width: calc($item-width/2);
+    }
 
 /* icons */
     .icons {
@@ -64,5 +85,4 @@
     a {
         color: $color-main;
     }
-
 }
