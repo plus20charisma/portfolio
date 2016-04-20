@@ -98,8 +98,49 @@ app.controller('galleryCtrl', ['$scope', function($scope) {
 }]);
 
 app.controller('contactCtrl', ['$scope', '$http', function($scope, $http){
-  $scope.test = "Hello World"
-}])
+  $scope.result = 'hidden';
+  $scope.resultMessage = '';
+  $scope.formData = {};
+  $scope.$submitted = false;
+  $scope.submitButtonDisabled = false;
+  $scope.submit = function(contactForm) {
+    $scope.submitted = true;
+    $scope.submitButtonDisabled = true;
+
+    var param = function(data) {
+      var retStr = '';
+      for (var d in data) {
+        if (data.hasOwnProperty(d)) {
+          retStr += d + '=' + data[d] + '&';
+        }
+      }
+      return retStr.slice(0, retStr.length -1);
+    };
+
+    if (contactForm.$valid) {
+      $http({
+        method: 'POST',
+        url: 'contact-form.php',
+        data: param($scope.formData),
+        headers:  { 'Content-Type': 'application/x-www-form-urlencoded'}
+      }).success(function(data){
+        if (data.success) {
+          $scope.submitButtonDisabled = true;
+          $scope.resultMessage = data.message;
+          $scope.result = 'success';
+        } else {
+          $scope.submitButtonDisabled = false;
+          $scope.resultMessage = data.message;
+          $scope.result = 'failure';
+        }
+      });
+    } else {
+      $scope.submitButtonDisabled = false;
+      $scope.resultMessage = 'Failed. Please fill out all the fields.';
+      $scope.result='failure';
+    }
+  };
+}]);
 
 /* particles js.  fix later maybe
 
