@@ -1,19 +1,19 @@
 #contact-footer {
 
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+
+    @media $small {flex-flow:column;}
+    @media $medium {flex-flow:row;}
+    justify-content: center;
     margin-top: 2rem;
+
+    ul, ol {list-style: none;  padding: 0;  }
 
     #contact-form {
 
-    @media $small {
-        width: calc($item-width / 1)
-    }
+        @media $small {width: $item-width;}
+        @media $medium {width: calc($item-width / 2)}
 
-        @media $medium {
-            width: calc($item-width / 2)
-        }
             display: inline-block ;
             #contact-top {
                 display: flex;
@@ -32,13 +32,7 @@
     }
 
 
-    #social-icons {
-        @media $small { width: calc($item-width/1) }
-        @media $medium { width: calc($item-width/2) }
-        text-align: center;
-    }
 
-    ul, ol {list-style: none;  padding: 0;  }
 
     form {width: $item-width;}
 
@@ -68,15 +62,27 @@
     }
 
 /* icons */
+
+
+    #social-icons {
+        @media $small { width: $item-width; }
+        @media $medium { width: calc($item-width/2) }
+        text-align: center;
+        display:flex;
+        flex-flow: column;
+            margin-top: .5rem;
+    }
+
+    p {width: 80%; margin: 0px auto;}
+
     .icons {
 
-        text-align: center;
         display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        @media $small {justify-content: center;}
+        flex-flow: row;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0px auto;
 
-        margin: 0 0 3rem 0;
 
         a {
             display: inline-block;

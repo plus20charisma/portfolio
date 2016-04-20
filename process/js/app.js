@@ -97,7 +97,11 @@ app.controller('galleryCtrl', ['$scope', function($scope) {
 
 }]);
 
-/*
+app.controller('contactCtrl', ['$scope', '$http', function($scope, $http){
+  $scope.test = "Hello World"
+}])
+
+/* particles js.  fix later maybe
 
 particlesJS("particles-js", {
   "particles": {
